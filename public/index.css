@@ -1,0 +1,27 @@
+.container {
+  width: 85%;
+  margin: auto;
+}
+
+nav {
+  height: 3.5em;
+}
+
+nav .responsive-image {
+  height: 2em;
+}
+.card {
+  height: 5.5em;
+  width: 13em;
+}
+.card-title {
+  font-weight: 800;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.board-card {
+  background: url(https://picsum.photos/seed/avalanche/850/1050?blur) no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}

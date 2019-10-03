@@ -1,7 +1,8 @@
 import React from "react";
+import Boards from "./components/Boards";
 
 function App() {
-  return <div>Hello World!</div>;
+  return <Boards />;
 }
 
 export default App;
