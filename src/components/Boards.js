@@ -5,6 +5,23 @@ class Boards extends Component {
     boards: []
   };
 
+  renderBoard = name => {
+    return (
+      <div className="board col s4 m2">
+        <div
+          className="card"
+          onClick={() => {
+            alert("Hello");
+          }}
+        >
+          <div className="board-card card-content white-text hoverable">
+            <span className="card-title">{name}</span>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   async componentDidMount() {
     const key = "4a0d830d67c1acd2c6e927bc368469e9";
     const token =
@@ -26,19 +43,8 @@ class Boards extends Component {
   render() {
     return (
       <div className="boards container">
-        <div className="row">
-          <div className="col s12 m6">
-            <div
-              className="card"
-              onClick={() => {
-                alert("Hello");
-              }}
-            >
-              <div className="board-card card-content white-text hoverable">
-                <span className="card-title">Board</span>
-              </div>
-            </div>
-          </div>
+        <div className="board-row">
+          {this.state.boards.map(board => this.renderBoard(board.name))}
         </div>
       </div>
     );
