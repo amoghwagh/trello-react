@@ -14,7 +14,7 @@ class Boards extends Component {
               alert("Hello");
             }}
           >
-            <div className="board-card card-content white-text">
+            <div className="board-card card-content white-text hoverable">
               <span className="card-title">Board</span>
             </div>
           </div>

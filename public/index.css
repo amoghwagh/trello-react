@@ -14,14 +14,20 @@ nav .responsive-image {
   height: 5.5em;
   width: 13em;
 }
+
 .card-title {
-  font-weight: 800;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-weight: 200 !important;
+  font-size: 1.2em !important;
+  font-family: "Alfa Slab One", cursive;
+  text-shadow: 1.25px 1.25px black;
+  position: relative;
+  top: -1.2em;
+  left: -1em;
 }
 
 .board-card {
-  background: url(https://picsum.photos/seed/avalanche/850/1050?blur) no-repeat;
+  background: url(https://picsum.photos/seed/picsum/500/300?blur=2) no-repeat
+    center;
   background-size: cover;
   cursor: pointer;
 }
