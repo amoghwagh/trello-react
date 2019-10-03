@@ -10,6 +10,10 @@ nav {
 nav .responsive-image {
   height: 2em;
 }
+.boards {
+  margin-top: 1.5em;
+}
+
 .card {
   height: 5.5em;
   width: 13em;
@@ -26,8 +30,7 @@ nav .responsive-image {
 }
 
 .board-card {
-  background: url(https://picsum.photos/seed/picsum/500/300?blur=2) no-repeat
-    center;
+  background: url(https://picsum.photos/seed/picsum/500/300) no-repeat center;
   background-size: cover;
   cursor: pointer;
 }
