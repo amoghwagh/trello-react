@@ -37,7 +37,7 @@ export default class CurrentBoard extends Component {
       <section className="lists-section" style={boardStyle}>
         <nav className="transparent z-depth-0">
           <div className="nav-wrapper">
-            <a href="#" class="brand-logo board-name">
+            <a className="brand-logo board-name">
               {this.props.url.params.bname}
             </a>
           </div>

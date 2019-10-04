@@ -43,7 +43,7 @@ nav .responsive-image {
 
 .lists-section {
   margin: auto;
-  height: 54em;
+  height: 60em;
   background: no-repeat center;
   background-size: cover;
 }
@@ -60,6 +60,7 @@ nav .responsive-image {
 .lists {
   display: flex;
   overflow-x: scroll !important;
+  height: 55em;
 }
 
 .list {
@@ -77,4 +78,39 @@ nav .responsive-image {
   font-weight: bolder !important;
   color: #172b4d;
   line-height: 1.35em !important;
+}
+
+.cards-section {
+  height: 45em;
+  width: 18em;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.trello-card-row {
+  display: flex;
+}
+
+.trello-card {
+  position: relative;
+  height: 6em;
+  width: 17em;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.trello-card-title {
+  font-size: 1em !important;
+  width: 16em;
+  line-height: 1.5em !important;
+  position: relative;
+  left: -1.2em;
+  top: -1em;
+}
+
+.desc-icon {
+  position: relative;
+  left: -1.1em;
+  top: -1.2em;
+  font-size: 1em !important;
+  color: darkgreen;
 }
