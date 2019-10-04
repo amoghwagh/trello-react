@@ -17,18 +17,30 @@ export default class CurrentBoard extends Component {
       this.setState({
         lists: jsonData
       });
-      console.log(this.state.lists);
     } catch (err) {
       alert("Error in Fetching Lists Data from the Board..");
     }
   }
   render() {
-    return this.state.lists.map(list => {
-      return (
-        <div class="row">
-          <List />
+    const bgImage = this.props.boards
+      .map(board => {
+        return board.shortLink === this.props.url.params.bid
+          ? board.prefs.backgroundImage
+          : null;
+      })
+      .filter(item => item !== null);
+
+    const boardStyle = {
+      backgroundImage: `url(${bgImage[0]})`
+    };
+    return (
+      <section className="lists-section" style={boardStyle}>
+        <div className="row lists">
+          {this.state.lists.map(list => {
+            return <List key={list.id} list={list} />;
+          })}
         </div>
-      );
-    });
+      </section>
+    );
   }
 }

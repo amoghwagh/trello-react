@@ -4,11 +4,13 @@
 }
 
 nav {
-  height: 3.5em;
+  height: 3em;
 }
 
 nav .responsive-image {
-  height: 2em;
+  position: relative;
+  top: -0.2em;
+  height: 1.7em;
 }
 
 .boards .board-row {
@@ -37,4 +39,22 @@ nav .responsive-image {
   background: no-repeat center;
   background-size: cover;
   cursor: pointer;
+}
+
+.lists-section {
+  margin: auto;
+  height: 50em;
+  background: no-repeat center;
+  background-size: cover;
+}
+
+.lists {
+  display: flex;
+  overflow-x: scroll !important;
+}
+
+.list {
+  margin: 1em;
+  height: 45em;
+  width: 20em;
 }

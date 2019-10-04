@@ -45,7 +45,9 @@ class Boards extends Component {
           <Route
             exact
             path="/b/:bid/:bname"
-            render={({ match }) => <CurrentBoard url={match} />}
+            render={({ match }) => (
+              <CurrentBoard url={match} boards={this.state.boards} />
+            )}
           ></Route>
           <Route render={() => <div>Wrong Route</div>} />
         </Switch>
