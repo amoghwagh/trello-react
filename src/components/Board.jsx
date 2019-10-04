@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import SingleBoard from "./SingleBoard.jsx";
 
 class Board extends Component {
   render() {

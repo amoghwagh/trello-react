@@ -1,12 +1,8 @@
 import React, { Component } from "react";
 import Board from "./Board.jsx";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect,
-  Link
-} from "react-router-dom";
+import CurrentBoard from "./CurrentBoard.jsx";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { baseUrl, key, token } from "../include-files/trello-details";
 
 class Boards extends Component {
   state = {
@@ -14,13 +10,9 @@ class Boards extends Component {
   };
 
   async componentDidMount() {
-    const key = "4a0d830d67c1acd2c6e927bc368469e9";
-    const token =
-      "d8295327e9764268b9e8fbb0ffe5b41518a24923f873c859ef2fa0756ebe2935";
-
     try {
       const result = await fetch(
-        `https://api.trello.com/1/members/amoghwagh1/boards?key=${key}&token=${token}`
+        `${baseUrl}/1/members/amoghwagh1/boards?key=${key}&token=${token}`
       );
       const jsonData = await result.json();
       this.setState({
@@ -39,7 +31,10 @@ class Boards extends Component {
             <div className="boards container">
               <div className="board-row">
                 {this.state.boards.map(board => (
-                  <Link to={`/b/${board.shortLink}/${board.name}`}>
+                  <Link
+                    key={board.shortLink}
+                    to={`/b/${board.shortLink}/${board.name}`}
+                  >
                     <Board key={board.shortLink} board={board} />
                   </Link>
                 ))}
@@ -47,9 +42,11 @@ class Boards extends Component {
             </div>
           </Route>
 
-          <Route exact path="/b/:bid/:bname">
-            <div>Board is opened</div>
-          </Route>
+          <Route
+            exact
+            path="/b/:bid/:bname"
+            render={({ match }) => <CurrentBoard url={match} />}
+          ></Route>
           <Route render={() => <div>Wrong Route</div>} />
         </Switch>
       </Router>

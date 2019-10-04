@@ -23,7 +23,7 @@ nav .responsive-image {
   height: 8em;
 }
 
-.card-title {
+.boards .card-title {
   font-weight: 200 !important;
   font-size: 0.9em !important;
   font-family: "Alfa Slab One", cursive;
@@ -33,7 +33,7 @@ nav .responsive-image {
   left: -1em;
 }
 
-.board-card {
+.boards .board-card {
   background: no-repeat center;
   background-size: cover;
   cursor: pointer;
