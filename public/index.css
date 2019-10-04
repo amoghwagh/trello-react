@@ -25,16 +25,16 @@ nav .responsive-image {
 
 .card-title {
   font-weight: 200 !important;
-  font-size: 0.8em !important;
+  font-size: 0.9em !important;
   font-family: "Alfa Slab One", cursive;
   text-shadow: 1.25px 1.25px black;
   position: relative;
-  top: -1.2em;
+  top: -1.5em;
   left: -1em;
 }
 
 .board-card {
-  background: url(https://picsum.photos/1920/1080) no-repeat center;
+  background: no-repeat center;
   background-size: cover;
   cursor: pointer;
 }

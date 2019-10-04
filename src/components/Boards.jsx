@@ -1,25 +1,9 @@
 import React, { Component } from "react";
+import Board from "./Board.jsx";
 
 class Boards extends Component {
   state = {
     boards: []
-  };
-
-  renderBoard = name => {
-    return (
-      <div className="board col s4 m2">
-        <div
-          className="card"
-          onClick={() => {
-            alert("Hello");
-          }}
-        >
-          <div className="board-card card-content white-text hoverable">
-            <span className="card-title">{name}</span>
-          </div>
-        </div>
-      </div>
-    );
   };
 
   async componentDidMount() {
@@ -44,7 +28,9 @@ class Boards extends Component {
     return (
       <div className="boards container">
         <div className="board-row">
-          {this.state.boards.map(board => this.renderBoard(board.name))}
+          {this.state.boards.map(board => (
+            <Board key={board.shortLink} board={board} />
+          ))}
         </div>
       </div>
     );
