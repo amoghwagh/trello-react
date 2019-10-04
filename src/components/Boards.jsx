@@ -1,5 +1,12 @@
 import React, { Component } from "react";
 import Board from "./Board.jsx";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+  Link
+} from "react-router-dom";
 
 class Boards extends Component {
   state = {
@@ -26,13 +33,26 @@ class Boards extends Component {
 
   render() {
     return (
-      <div className="boards container">
-        <div className="board-row">
-          {this.state.boards.map(board => (
-            <Board key={board.shortLink} board={board} />
-          ))}
-        </div>
-      </div>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <div className="boards container">
+              <div className="board-row">
+                {this.state.boards.map(board => (
+                  <Link to={`/b/${board.shortLink}/${board.name}`}>
+                    <Board key={board.shortLink} board={board} />
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </Route>
+
+          <Route exact path="/b/:bid/:bname">
+            <div>Board is opened</div>
+          </Route>
+          <Route render={() => <div>Wrong Route</div>} />
+        </Switch>
+      </Router>
     );
   }
 }
