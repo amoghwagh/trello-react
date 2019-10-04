@@ -43,9 +43,18 @@ nav .responsive-image {
 
 .lists-section {
   margin: auto;
-  height: 50em;
+  height: 54em;
   background: no-repeat center;
   background-size: cover;
+}
+
+.lists-section .board-name {
+  position: relative;
+  top: -0.25em;
+  left: 1.2em;
+  font-size: 1.55em !important;
+  font-weight: 600 !important;
+  color: #172b4d;
 }
 
 .lists {
@@ -56,5 +65,16 @@ nav .responsive-image {
 .list {
   margin: 1em;
   height: 45em;
-  width: 20em;
+  width: 18em;
+  background-color: #ebecf0;
+}
+
+.list-title {
+  position: relative;
+  top: -1.15em;
+  left: -0.2em;
+  font-size: 0.9em !important;
+  font-weight: bolder !important;
+  color: #172b4d;
+  line-height: 1.35em !important;
 }

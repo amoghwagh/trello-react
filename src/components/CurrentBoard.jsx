@@ -35,6 +35,13 @@ export default class CurrentBoard extends Component {
     };
     return (
       <section className="lists-section" style={boardStyle}>
+        <nav className="transparent z-depth-0">
+          <div className="nav-wrapper">
+            <a href="#" class="brand-logo board-name">
+              {this.props.url.params.bname}
+            </a>
+          </div>
+        </nav>
         <div className="row lists">
           {this.state.lists.map(list => {
             return <List key={list.id} list={list} />;
