@@ -85,6 +85,9 @@ nav .responsive-image {
   width: 18em;
   overflow-y: scroll;
   overflow-x: hidden;
+  margin-top: 0.4em;
+  position: relative;
+  left: -0.1em;
 }
 .trello-card-row {
   display: flex;
@@ -113,4 +116,15 @@ nav .responsive-image {
   top: -1.2em;
   font-size: 1em !important;
   color: darkgreen;
+}
+
+.modal-overlay-on {
+  z-index: 1002;
+  display: block;
+  opacity: 0.5;
+}
+
+.modal-show {
+  z-index: 1003;
+  display: block;
 }

@@ -1,5 +1,13 @@
 import React, { Component } from "react";
-import List from "./List";
+import Lists from "./Lists.jsx";
+
+import {
+  BrowserRouter as Router,
+  Route,
+  withRouter,
+  Switch,
+  Link
+} from "react-router-dom";
 
 import { baseUrl, key, token } from "../include-files/trello-details";
 
@@ -34,20 +42,36 @@ export default class CurrentBoard extends Component {
       backgroundImage: `url(${bgImage[0]})`
     };
     return (
-      <section className="lists-section" style={boardStyle}>
-        <nav className="transparent z-depth-0">
-          <div className="nav-wrapper">
-            <a className="brand-logo board-name">
-              {this.props.url.params.bname}
-            </a>
-          </div>
-        </nav>
-        <div className="row lists">
-          {this.state.lists.map(list => {
-            return <List key={list.id} list={list} />;
-          })}
-        </div>
-      </section>
+      <Router>
+        <Switch>
+          <Route
+            path="/b/:bid/:bname"
+            render={() => {
+              return (
+                <Lists
+                  url={this.props.url}
+                  boardStyle={boardStyle}
+                  lists={this.state.lists}
+                />
+              );
+            }}
+          ></Route>
+          <Route
+            path="/c/:shortLink/:name"
+            render={() => {
+              return (
+                <React.Fragment>
+                  <Lists
+                    url={this.props.url}
+                    boardStyle={boardStyle}
+                    lists={this.state.lists}
+                  />
+                </React.Fragment>
+              );
+            }}
+          ></Route>
+        </Switch>
+      </Router>
     );
   }
 }

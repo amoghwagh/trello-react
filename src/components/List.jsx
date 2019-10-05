@@ -27,7 +27,10 @@ export default class List extends Component {
             <span className="card-title list-title">
               {this.props.list.name}
               <div className="cards-section">
-                <Cards cards={this.state.cards} />
+                <Cards
+                  cards={this.state.cards}
+                  getCardDetail={this.props.getCardDetail}
+                />
               </div>
             </span>
           </div>
