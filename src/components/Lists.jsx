@@ -5,24 +5,37 @@ import ModalCard from "./ModalCard.jsx";
 export default class Lists extends Component {
   state = {
     modalCardDetails: {},
-    modalClass: ""
+    modalOverlayClass: "",
+    modalDisplayClass: ""
   };
   getCardDetail = card => {
     this.setState({
       modalCardDetails: card
     });
-    this.addOverlay();
+    this.toggleOverlay();
+    this.toggleModalClass();
   };
 
-  addOverlay = () => {
-    this.state.modalClass === ""
+  toggleOverlay = () => {
+    this.state.modalOverlayClass === ""
       ? this.setState({
-          modalClass: "modal-overlay-on"
+          modalOverlayClass: "modal-overlay-on"
         })
       : this.setState({
-          modalClass: ""
+          modalOverlayClass: ""
         });
   };
+
+  toggleModalClass = () => {
+    this.state.modalDisplayClass === ""
+      ? this.setState({
+          modalDisplayClass: "modal-show"
+        })
+      : this.setState({
+          modalDisplayClass: ""
+        });
+  };
+
   render() {
     return (
       <section className="lists-section" style={this.props.boardStyle}>
@@ -34,11 +47,17 @@ export default class Lists extends Component {
           </div>
         </nav>
 
-        <ModalCard cardDetail={this.state.modalCardDetails} />
+        <ModalCard
+          cardDetail={this.state.modalCardDetails}
+          modalDisplayClass={this.state.modalDisplayClass}
+          toggleOverlay={this.toggleOverlay}
+          toggleModalClass={this.toggleModalClass}
+        />
         <div
-          className={`modal-overlay  + ${this.state.modalClass}`}
+          className={`modal-overlay  + ${this.state.modalOverlayClass}`}
           onClick={() => {
-            this.addOverlay();
+            this.toggleOverlay();
+            this.toggleModalClass();
           }}
         />
         <div className="row lists">
@@ -52,9 +71,6 @@ export default class Lists extends Component {
             );
           })}
         </div>
-        <button data-target="modal1" className="btn modal-trigger">
-          Modal
-        </button>
       </section>
     );
   }
