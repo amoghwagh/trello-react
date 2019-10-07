@@ -67,6 +67,10 @@ export default class Lists extends Component {
                 key={list.id}
                 list={list}
                 getCardDetail={this.getCardDetail}
+                onDragOver={e => {
+                  e.preventDefault();
+                  console.log("Dragged to list!");
+                }}
               />
             );
           })}

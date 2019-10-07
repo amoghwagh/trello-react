@@ -10,6 +10,10 @@ export default class Card extends Component {
           onClick={() => {
             this.props.getCardDetail(this.props.card);
           }}
+          draggable
+          onDragStart={e => {
+            return console.log(this.props.card.name);
+          }}
         >
           <div className="col s6 m12">
             <div className="card trello-card">
