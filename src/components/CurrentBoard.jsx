@@ -66,7 +66,6 @@ export default class CurrentBoard extends Component {
     }
   }
   render() {
-    console.log(this.state);
     const boardStyle = {
       backgroundImage: `url(${this.state.bgImage})`
     };

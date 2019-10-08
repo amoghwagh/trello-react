@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import List from "./List.jsx";
 import ModalCard from "./ModalCard.jsx";
+import { baseUrl, key, token } from "../include-files/trello-details";
 
 export default class Lists extends Component {
   state = {
@@ -8,6 +9,24 @@ export default class Lists extends Component {
     modalOverlayClass: "",
     modalDisplayClass: ""
   };
+
+  async componentDidMount() {
+    if (this.props.url.path === "/c/:shortLink/:name") {
+      try {
+        const result = await fetch(
+          `${baseUrl}/1/cards/${this.props.url.params.shortLink}?key=${key}&token=${token}`
+        );
+        const json = await result.json();
+        this.setState({
+          modalCardDetails: json,
+          modalDisplayClass: "modal-show",
+          modalOverlayClass: "modal-overlay-on"
+        });
+      } catch (err) {
+        alert("Failed to fetch Card Details");
+      }
+    }
+  }
 
   getCardDetail = card => {
     this.setState({
