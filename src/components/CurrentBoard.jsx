@@ -93,6 +93,7 @@ export default class CurrentBoard extends Component {
                     url={this.props.url}
                     boardStyle={boardStyle}
                     lists={this.state.lists}
+                    boards={this.state.boards}
                     refresh={this.state.refresh}
                   />
                 </React.Fragment>
