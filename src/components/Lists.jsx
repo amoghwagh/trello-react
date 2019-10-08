@@ -8,6 +8,7 @@ export default class Lists extends Component {
     modalOverlayClass: "",
     modalDisplayClass: ""
   };
+
   getCardDetail = card => {
     this.setState({
       modalCardDetails: card

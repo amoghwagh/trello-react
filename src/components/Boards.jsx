@@ -46,6 +46,17 @@ class Boards extends Component {
             exact
             path="/b/:bid/:bname"
             render={({ match }) => (
+              <CurrentBoard
+                url={match}
+                boards={this.state.boards}
+                fromBoard={true}
+              />
+            )}
+          ></Route>
+          <Route
+            exact
+            path="/c/:shortLink/:name"
+            render={({ match }) => (
               <CurrentBoard url={match} boards={this.state.boards} />
             )}
           ></Route>

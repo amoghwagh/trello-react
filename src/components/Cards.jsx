@@ -9,7 +9,6 @@ export default class Cards extends Component {
           key={card.id}
           card={card}
           getCardDetail={this.props.getCardDetail}
-          draggable
         />
       );
     });
